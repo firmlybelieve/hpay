@@ -1,0 +1,104 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+打开测试页面
+    [Arguments]    ${url}    ${browser}
+    open browser    ${url}    ${browser}
+
+测试商户id
+    [Arguments]    ${merchantid}
+    input text    merchantid    ${merchantid}
+
+测试商户证书
+    [Arguments]    ${merchantcert}
+    input text    merchantcert    ${merchantcert}
+
+页面呈现方式
+    [Arguments]    ${pagetype}
+    select from list    transmode    ${pagetype}
+
+界面语言
+    [Arguments]    ${language}
+    select from list    language    ${language}
+
+标价币种
+    [Arguments]    ${currency}
+    select from list    currency    ${currency}
+
+标价金额
+    [Arguments]    ${orderamount}
+    input text    orderamount    ${orderamount}
+
+产品名称
+    [Arguments]    ${productname}
+    input text    productname1    ${productname}
+
+账单邮箱
+    [Arguments]    ${billemail}
+    input text    billemail    ${billemail}
+
+账单国家1
+    [Arguments]    ${billcountry}
+    [Documentation]    提交页面输入国家
+    input text    billcountry    ${billcountry}
+
+账单地区
+    [Arguments]    ${billprovince}
+    input text    billprovince    ${billprovince}
+
+账单邮编
+    [Arguments]    ${billpost}
+    input text    billpost    ${billpost}
+
+收货国家
+    [Arguments]    ${deliverycountry}
+    input text    deliverycountry    ${deliverycountry}
+
+提交
+    click button    Submit1
+
+卡号
+    [Arguments]    ${cardnum}
+    input text    txtCardNum    ${cardnum}
+
+有效期
+    select from list    slExpireMonth    10
+    select from list    slExpireYear    2020
+
+CVV
+    [Arguments]    ${txtCVV}
+    input text    txtCVV    ${txtCVV}
+
+发开国家
+    [Arguments]    ${slBinCountry}
+    select from list    slBinCountry    ${slBinCountry}
+
+发卡行
+    [Arguments]    ${txtIssuer}
+    input text    txtIssuer    ${txtIssuer}
+
+firstname
+    [Arguments]    ${txtCardHolderName}
+    input text    txtCardHolderName    ${txtCardHolderName}
+
+lastname
+    [Arguments]    ${txtLastNmae}
+    input text    txtLastNmae    ${txtLastNmae}
+
+账单国家2
+    [Arguments]    ${slCountry}
+    [Documentation]    确认页面下拉选择国家
+    select from list    slCountry    ${slCountry}
+
+确认订单1
+    [Documentation]    普通页面
+    click button    btnPay
+
+确认订单2
+    execute javascript    return VerifyPage();
+    execute javascript    javascript:__doPostBack('btnPay','')
+
+检查点
+    [Arguments]    ${result}
+    page should contain    ${result}
