@@ -21,7 +21,7 @@ submit3
     ...    1000    a1    Angola    SVR0100021
     [Teardown]    close browser
 
-submit4
+submit5
     [Documentation]    提交的产品输入产品黑名单中
     ...    该商户是例外商户
     [Template]
