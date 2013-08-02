@@ -1,0 +1,6 @@
+[0801/163130:INFO:chromedriver_server.cc(76)] Handling request: /session {"sessionId": null, "desiredCapabilities": {"platform": "ANY", "browserName": "chrome", "version": "", "javascriptEnabled": true, "chromeOptions": {"args": [], "extensions": []}}}
+[0801/163130:INFO:chromedriver_server.cc(81)] Done handling request: 200 {"sessionId":"","status":33,"value":{"message":"session not created exception: unknown error: cannot find Chrome binary\n  (Driver info: chromedriver=0.5,platform=Windows NT 5.1 SP3 x86)"}}
+[0801/163130:INFO:chromedriver_server.cc(76)] Handling request: /session/None 
+[0801/163130:INFO:chromedriver_server.cc(81)] Done handling request: 200 {"sessionId":"None","status":100,"value":{"message":"no such session: None\n  (Driver info: chromedriver=0.5,platform=Windows NT 5.1 SP3 x86)"}}
+[0801/163130:INFO:chromedriver_server.cc(76)] Handling request: /shutdown 
+[0801/163130:INFO:chromedriver_server.cc(81)] Done handling request: 200 {"sessionId":"","status":0,"value":null}

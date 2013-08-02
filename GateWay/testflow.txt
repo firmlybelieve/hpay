@@ -5,13 +5,15 @@ Library           Selenium2Library
 *** Keywords ***
 提交订单
     [Arguments]    ${url}    ${browser}    ${merchantid}    ${merchantcert}    ${pagetype}    ${currency}
-    ...    ${orderamount}    ${result}
+    ...    ${orderamount}    ${productname}    ${deliverycountry}    ${result}
     打开测试页面    ${url}    ${browser}
     测试商户id    ${merchantid}
     测试商户证书    ${merchantcert}
     页面呈现方式    ${pagetype}
     标价币种    ${currency}
     标价金额    ${orderamount}
+    产品名称    ${productname}
+    收货国家    ${deliverycountry}
     提交
     检查点    ${result}
 
@@ -22,5 +24,16 @@ Library           Selenium2Library
     CVV    ${txtCVV}
     firstname    ${txtCardHolderName}
     lastname    ${txtLastNmae}
+    确认订单2
+    检查点    ${reslut}
+
+支付订单2
+    [Arguments]    ${cardnum}    ${txtCVV}    ${txtCardHolderName}    ${txtLastNmae}    ${billemail}    ${reslut}
+    卡号    ${cardnum}
+    有效期
+    CVV    ${txtCVV}
+    firstname    ${txtCardHolderName}
+    lastname    ${txtLastNmae}
+    账单邮箱    ${billemail}
     确认订单2
     检查点    ${reslut}
