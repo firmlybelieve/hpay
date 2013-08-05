@@ -35,3 +35,11 @@ submit5
     提交订单1    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
     ...    1000    a1    Angola    SVR0100021
     [Teardown]    close browser
+
+submit6
+    [Documentation]    单笔交易超额
+    [Template]
+    提交订单1    http://172.21.42.1:93/test/index.htm    ff    100014    mtFG7WNbWZwoEm67eGBuhGS448cfX0cyaQxX2C6makGxgTIKt4YKj4jOJKL8UHm4X7nXXjfKIpu6avYkzAV2cApfHRorZ7AB6LIhFUVkZnc2KlOnUAItVt2xSipg3WUK    新支付    美元
+    ...    200    CCCC    Angola    Card number
+    支付订单1    4111111111111111    788    eddy    wang    SVR0100022
+    [Teardown]
