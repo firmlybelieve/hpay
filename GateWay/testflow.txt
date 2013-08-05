@@ -3,7 +3,7 @@ Resource          keyword.txt
 Library           Selenium2Library
 
 *** Keywords ***
-提交订单
+提交订单1
     [Arguments]    ${url}    ${browser}    ${merchantid}    ${merchantcert}    ${pagetype}    ${currency}
     ...    ${orderamount}    ${productname}    ${deliverycountry}    ${result}
     打开测试页面    ${url}    ${browser}
@@ -17,7 +17,22 @@ Library           Selenium2Library
     提交
     检查点    ${result}
 
-支付订单
+提交订单2
+    [Arguments]    ${url}    ${browser}    ${merchantid}    ${merchantcert}    ${pagetype}    ${currency}
+    ...    ${orderamount}    ${productname}    ${deliverycountry}    ${billemail}    ${result}
+    打开测试页面    ${url}    ${browser}
+    测试商户id    ${merchantid}
+    测试商户证书    ${merchantcert}
+    页面呈现方式    ${pagetype}
+    标价币种    ${currency}
+    标价金额    ${orderamount}
+    产品名称    ${productname}
+    收货国家    ${deliverycountry}
+    账单邮箱    ${billemail}
+    提交
+    检查点    ${result}
+
+支付订单1
     [Arguments]    ${cardnum}    ${txtCVV}    ${txtCardHolderName}    ${txtLastNmae}    ${reslut}
     卡号    ${cardnum}
     有效期

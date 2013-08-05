@@ -6,52 +6,79 @@ Resource          testflow.txt
 pay1
     [Documentation]    支付成功
     [Setup]
-    提交订单    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    提交订单1    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
     ...    1000    lanqiu    China    Card number
-    支付订单    4111111111111111    788    eddy    wang    HF
+    支付订单1    4111111111111111    788    eddy    wang    HF
     [Teardown]    close browser
 
 pay2
-    [Documentation]    邮箱黑名单
+    [Documentation]    邮箱黑名单(部分匹配-商户后台)
     [Tags]    BlackEmail
     [Setup]
-    提交订单    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
-    ...    1000    lanqiu    China    Card number
-    支付订单2    4111111111111111    788    eddy    wang    1083331038@qq.com    SVR0100017
+    提交订单2    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    ...    1000    lanqiu    China    eddy.wang@qq.com    Card number
+    支付订单1    4111111111111111    788    eddy    wang    SVR0100017
     [Teardown]    close browser
 
 pay3
-    [Documentation]    卡号存在商户黑名单中（部分匹配）
-    [Tags]    BlackCard
+    [Documentation]    邮箱黑名单(部分匹配-系统后台)
+    [Tags]    BlackEmail
     [Setup]
-    提交订单    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
-    ...    1000    lanqiu    China    Card number
-    支付订单    4666666666666666    788    eddy    wang    SVR0100006
+    提交订单2    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    ...    1000    lanqiu    China    eddy.wang@163.com    Card number
+    支付订单1    4111111111111111    788    eddy    wang    SVR0100017
     [Teardown]    close browser
 
 pay4
-    [Documentation]    卡号存在商户黑名单中（全部匹配）
-    [Tags]    BlackCard
+    [Documentation]    邮箱黑名单(全部匹配-商户后台)
+    [Tags]    BlackEmail
     [Setup]
-    提交订单    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
-    ...    1000    lanqiu    China    Card number
-    支付订单    45555511111111111    788    eddy    wang    SVR0100006
+    提交订单2    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    ...    1000    lanqiu    China    firmlybelieve@yeah.net    Card number
+    支付订单1    4111111111111111    788    eddy    wang    SVR0100017
     [Teardown]    close browser
 
 pay5
-    [Documentation]    卡号存在系统黑名单中（全部匹配）
-    [Tags]    BlackCard
+    [Documentation]    邮箱黑名单(全部匹配-系统后台)
+    [Tags]    BlackEmail
     [Setup]
-    提交订单    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
-    ...    1000    lanqiu    China    Card number
-    支付订单    422222222222222    788    eddy    wang    SVR0100006
+    提交订单2    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    ...    1000    lanqiu    China    eddy@wangyi.com    Card number
+    支付订单1    4111111111111111    788    eddy    wang    SVR0100017
     [Teardown]    close browser
 
 pay6
+    [Documentation]    卡号存在商户黑名单中（全部匹配）
+    [Tags]    BlackCard
+    [Setup]
+    提交订单1    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    ...    1000    lanqiu    China    Card number
+    支付订单1    4666666666666666    788    eddy    wang    SVR0100006
+    [Teardown]    close browser
+
+pay7
+    [Documentation]    卡号存在商户黑名单中（部分匹配）
+    [Tags]    BlackCard
+    [Setup]
+    提交订单1    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    ...    1000    lanqiu    China    Card number
+    支付订单1    45555511111111111    788    eddy    wang    SVR0100006
+    [Teardown]    close browser
+
+pay8
+    [Documentation]    卡号存在系统黑名单中（全部匹配）
+    [Tags]    BlackCard
+    [Setup]
+    提交订单1    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    ...    1000    lanqiu    China    Card number
+    支付订单1    4222222222222222    788    eddy    wang    SVR0100006
+    [Teardown]    close browser
+
+pay9
     [Documentation]    卡号存在系统黑名单中（部分匹配）
     [Tags]    BlackCard
     [Setup]
-    提交订单    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
+    提交订单1    http://172.21.42.1:93/test/index.htm    ff    100085    O7sZbxQ1epKuIocuPaq2PQQ3UaHdS7531AXNk3n470xhF5dmAqSZ8nc6qxfbYMjgsPBiAxkUWv3YtIyY6vMBog4OyZxWYmfuQqYZE3Vcg7cMsmMR8peDaQ0mTVTJaw4J    新支付    日元
     ...    1000    lanqiu    China    Card number
-    支付订单    43333311111111111    788    eddy    wang    SVR0100006
+    支付订单1    43333311111111111    788    eddy    wang    SVR0100006
     [Teardown]    close browser
